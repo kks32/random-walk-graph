@@ -20,7 +20,7 @@ G.add_edge(6, 7)
 G.add_edge(7, 8)
 G.add_edge(7, 9)
 
-#Draw graph to a window
+# Draw graph
 #nx.draw(G)
 #plt.show()
 

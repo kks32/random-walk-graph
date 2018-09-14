@@ -12,4 +12,4 @@ A purple dot is at the position shown in the figure below. Every second it will 
 
 ## Solution
 
-This assumes a random choice is being made at every intersection. Probability of reaching green is 0.1109578
+This assumes a random choice from a uniform distribution is being made at every intersection. Probability of reaching green is `0.111036211104`.
