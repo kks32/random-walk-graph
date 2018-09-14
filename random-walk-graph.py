@@ -31,8 +31,8 @@ green_vertices = [5, 8]
 # Store number of successes
 nsuccess = 0
 
-# Execute 10million times this command sequence
-for step in range(1, 10000000):
+# Execute 1million times this command sequence
+for step in range(1, 1000000):
     # Choose a random start node
     vertexid = 1 #random.choice(G.nodes())
     # Dictionary that associate nodes with the amount of times it was visited
@@ -47,8 +47,11 @@ for step in range(1, 10000000):
     for counter in range(1, 100000): 
         # Extract vertex neighbours vertex neighborhood
         vertex_neighbors = [n for n in G.neighbors(vertexid)]
+        # Set probability of going to a neighbour is uniform
+        probability = []
+        probability = probability + [1./len(vertex_neighbors)] * len(vertex_neighbors)
         # Choose a vertex from the vertex neighborhood to start the next random walk
-        vertexid = random.choice(vertex_neighbors)
+        vertexid = np.random.choice(vertex_neighbors, p=probability)
         # Accumulate the amount of times each vertex is visited
         if vertexid in visited_vertices:
             visited_vertices[vertexid] += 1
