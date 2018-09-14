@@ -25,9 +25,8 @@ G.add_edge(7, 9)
 #plt.show()
 
 # Define red and green nodes
-red = [0, 2, 3, 9]
-
-green = [5, 8]
+red_vertices = [0, 2, 3, 9]
+green_vertices = [5, 8]
 
 # Store number of successes
 nsuccess = 0
@@ -55,10 +54,10 @@ for step in range(1, 10000000):
             visited_vertices[vertexid] = 1
 
         # If reached red break
-        if vertexid in red:
+        if vertexid in red_vertices:
             break;
         # If reached green break
-        if vertexid in green:
+        if vertexid in green_vertices:
             nsuccess = nsuccess + 1
             break;
 
