@@ -34,7 +34,7 @@ nsuccess = 0
 # Execute 1million times this command sequence
 for step in range(1, 1000000):
     # Choose a random start node
-    vertexid = 1 #random.choice(G.nodes())
+    vertexid = random.choice([1, 4, 6, 7]) #1
     # Dictionary that associate nodes with the amount of times it was visited
     visited_vertices = {}
     # Store and print path
