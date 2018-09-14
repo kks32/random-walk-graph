@@ -32,12 +32,14 @@ green_vertices = [5, 8]
 nsuccess = 0
 
 # Execute 10million times this command sequence
-for step in range(1, 10000000):
+for step in range(1, 100000):
     # Choose a random start node
     vertexid = 1 #random.choice(G.nodes())
     # Dictionary that associate nodes with the amount of times it was visited
     visited_vertices = {}
-
+    # Store and print path
+    path = [vertexid]
+    
     print("Step: %d" % (step))
     # Restart the cycle
     counter = 0
@@ -53,6 +55,9 @@ for step in range(1, 10000000):
         else:
             visited_vertices[vertexid] = 1
 
+        # Append to path
+        path.append(vertexid)
+        
         # If reached red break
         if vertexid in red_vertices:
             break;
@@ -63,8 +68,9 @@ for step in range(1, 10000000):
 
     # Organize the vertex list in most visited decrescent order
     mostvisited = sorted(visited_vertices, key = visited_vertices.get,reverse = True)
+    print("Path: ", path)
     # Separate the top 10 most visited vertex
-    print(mostvisited[:10])
+    print("Most visited nodes: ", mostvisited[:10])
 
 print ("# of success: %d of %d" % (nsuccess, step))
 print ("Probability of reaching green : %.12f" % (nsuccess / step))
