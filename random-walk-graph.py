@@ -32,7 +32,7 @@ green_vertices = [5, 8]
 nsuccess = 0
 
 # Execute 10million times this command sequence
-for step in range(1, 100000):
+for step in range(1, 10000000):
     # Choose a random start node
     vertexid = 1 #random.choice(G.nodes())
     # Dictionary that associate nodes with the amount of times it was visited
